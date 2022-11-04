@@ -1,0 +1,13 @@
+{{#each this.items as |item|}}
+  <div {{(if item.show (modifier 'red'))}}>
+    {{item.name}}
+
+    <button type='button' {{on 'click' (fn this.toggle item)}}>
+      Toggle
+    </button>
+
+    {{#if item.show}}
+      (This should be red)
+    {{/if}}
+  </div>
+{{/each}}
